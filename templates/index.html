@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Loại Bệnh Da</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .result-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center"></div>
+        <h1>Phân Loại Bệnh Da</h1>
+        <p>Tải lên hình ảnh vùng da bị bệnh để xác định loại bệnh.</p>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('predict') }}">
+            <div class="form-group">
+                <label for="files">Tải lên hình ảnh:</label>
+                <input type="file" id="files" name="files" class="form-control-file" accept="image/*" multiple required>
+            </div>
+            <button type="submit" class="btn btn-primary">Dự Đoán</button>
+        </form>
+    </div>
+</body>
+</html>

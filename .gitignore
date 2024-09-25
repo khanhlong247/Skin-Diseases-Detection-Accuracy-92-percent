@@ -1,0 +1,4 @@
+venv/
+model/
+*.pyd
+*.h5
